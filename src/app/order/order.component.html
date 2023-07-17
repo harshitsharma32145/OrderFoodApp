@@ -1,0 +1,25 @@
+<div class="content">
+    <form [formGroup]="Addfood3" (ngSubmit)="Add(Addfood3.value)">
+
+        <mat-radio-group aria-label="Select an option" formControlName="foodname">
+            <mat-radio-button *ngFor="let item of fooddetail" value="{{item.foodname}}">
+                <span>{{item.foodname}}
+                </span><br>
+            </mat-radio-button><br>
+        </mat-radio-group>
+
+        <mat-radio-group aria-label="Select an option" formControlName="description">
+            <mat-radio-button *ngFor="let item of fooddetail" [value]="item.description">
+                <span>{{item.description}}</span><br>
+            </mat-radio-button><br>
+        </mat-radio-group>
+
+        <mat-radio-group aria-label="Select an option" formControlName="price">
+            <mat-radio-button *ngFor="let item of fooddetail" [value]="item.price">
+                <span>₹{{item.price}}</span>
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <div><button mat-raised-button>Post</button></div>
+    </form>
+</div>

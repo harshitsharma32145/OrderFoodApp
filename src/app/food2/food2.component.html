@@ -1,0 +1,26 @@
+
+<div class="content">
+    <form [formGroup]="Addfood2" (ngSubmit)="goto3(Addfood2.value)">
+
+        <mat-form-field  class="example-full-width me-4e width-240" >
+            <mat-label>trainNo</mat-label>
+            <input readonly matInput formControlName="trainNo">
+        </mat-form-field><br><br>
+
+        <mat-form-field style="display: block;"  class="example-full-width me-4e">
+            <mat-label>Select BoardingStation</mat-label>
+            <mat-select formControlName="boardingStation">
+                <mat-option value="haldwani">
+                    haldwani
+                </mat-option>
+                <mat-option value="dehradun">
+                    dehradun
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf=" !Addfood2.hasError('required')">
+                Please enter a your Journey Date
+            </mat-error>
+        </mat-form-field>
+        <div> <button mat-raised-button [disabled]="Addfood2.invalid">next</button></div>
+    </form>
+</div>
